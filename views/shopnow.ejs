@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/addtocart" method="post" enctype="multipart/form-data">
+        <div class="mt-3 mb-3">
+            <div class="w-33 me-4">
+                <div style="width: 400px; height: 560px; border: 1px solid black; text-align: center; padding: 10px;">
+                    <input type="hidden" value="<%= shopnow.image%>" name="image" id="">
+                    <img src="<%= shopnow.image%>" alt="" style="width: 100%; height: 450px; object-fit: cover;">
+                    <input type="hidden" value="<%= shopnow.prname%>" name="prname" id="">
+                    <h3><%= shopnow.prname%></h3>
+                    <input type="hidden" value="<%= shopnow.prprice%>" name="prprice" id="">
+                    <h5 style="margin: 0px;"><%= shopnow.prprice%> ₹</h5> 
+                    <input type="hidden" value="<%= shopnow.prdet%>" name="prdet" id="">
+                    <h5 style="margin: 0px;"><%= shopnow.prdet%> </h5> 
+                    <button type="submit">Add cart</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

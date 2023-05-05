@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container mt-4 position-absolute w-100" style="z-index: 9;">
+            <div class="justify-content-between d-flex align-items-center">
+                <div style="margin-left: 100px;">
+                    <img src="/images/favicon.png" alt="" width="70px">
+                </div>
+                <div>
+                    <ul class="d-flex list-inline">     
+                        <li><a href="" class="text-decoration-none fw-semibold text-white">Home</a></li>
+                        <li><a href="" class="m-5 text-decoration-none fw-semibold text-white">About</a></li>
+                        <li><a href="" class="text-decoration-none fw-semibold text-white">Home</a></li>
+                        <li><a href="/login" class="m-5 text-decoration-none fw-semibold text-white">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <body>
+        <section>
+            <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="/images/carousel/banner_1.jpg" class="d-block w-100" alt="..." height="750vh" style="object-fit: cover;">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="/images/carousel/banner_2.jpg" class="d-block w-100 " alt="..." height="750vh" style="object-fit: cover;">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="/images/carousel/banner_7.jpg" class="d-block w-100" alt="..." height="750px" style="object-fit: cover;">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+
+        <section style="margin-top: 70px;">
+            <div class="container">
+                <div class="text-center">
+                    <h1>Products</h1>
+                </div>
+                <div class="d-flex">
+                    <% for (var c of frontdata.splice(-3)) { %>
+                    <div class="mt-5 mb-3">
+                        <div class="w-33 me-4">
+                            <div style="width: 400px; height: 550px; border: 1px solid black; text-align: center; padding: 10px;">
+                                <img src="<%= c.image%>" alt="" style="width: 100%; height: 450px; object-fit: cover;">
+                                <h3><%= c.prname%></h3>
+                                <h5 style="margin: 0px;"><%= c.prprice%> ₹</h5> 
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+                <div style="text-align: center; display: block;" class="mb-3">
+                    <button style="border: none; padding: 5px 15px; background-color: black;">
+                        <a href="/viewmore" style=" text-decoration: none; color: white;">View More</a>            
+                    </button>
+                </div>
+            </div>
+        </section>
+    </body>
+</body>
+</html>
+
+<style>
+    .w-33{
+        width: 33.33%;
+    }
+</style>
